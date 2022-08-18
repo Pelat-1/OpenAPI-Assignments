@@ -13,3 +13,5 @@ info:
   termsOfService: http://example.com/terms/
 servers:
   $ref: 'Servers.yaml#/servers'
+paths:
+  $ref: 'APIs.yaml#/paths'
