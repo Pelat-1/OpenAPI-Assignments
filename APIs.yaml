@@ -10,7 +10,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'Schemas.yaml#/components/schemas/beerList'
+                $ref: 'OpenAPI.yaml#/components/schemas/beerList'
         401:
           description: User is not allowed to retrieve Beer list
         404:
