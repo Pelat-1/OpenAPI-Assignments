@@ -12,4 +12,4 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: http://example.com/terms/
 servers:
-  $ref: 'Servers.yaml/servers'
+  $ref: 'Servers.yaml#/servers'
