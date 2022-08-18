@@ -1,3 +1,4 @@
+openapi: 3.0.2
 servers:
   - description: Development Server
     url: https://dev.example.com
