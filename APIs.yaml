@@ -1,0 +1,13 @@
+openapi: 3.0.2
+paths:
+  /v1/beers:
+    get:
+      operationId: get-beers
+      description: Get Beer list
+      responses:
+        200:
+          description: Get Beer list
+        401:
+          description: User is not allowed to retrieve Beer list
+        404:
+          description: Beer list empty
