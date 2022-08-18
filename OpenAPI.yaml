@@ -1,0 +1,13 @@
+openapi: 3.0.2
+info:
+  title: OpenAPI Course - Assignment
+  description: OpenAPI Course assignment
+  version: 1.0.0
+  contact:
+    name: Pelat-1
+    email: nicolo.rogai@outlook.com
+    url: https://Pelat-1.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://example.com/terms/
