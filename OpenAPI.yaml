@@ -10,8 +10,20 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  termsOfService: http://example.com/terms/
+  termsOfService: https://example.com/terms/
 servers:
   $ref: 'Servers.yaml#/servers'
 paths:
   $ref: 'APIs.yaml#/paths'
+components:
+  schemas:
+    beer:
+      $ref: 'Schemas.yaml#/components/schemas/beer'
+    beerList:
+      $ref: 'Schemas.yaml#/components/schemas/beerList'
+    brewery:
+      $ref: 'Schemas.yaml#/components/schemas/brewery'
+    breweryLocation:
+      $ref: 'Schemas.yaml#/components/schemas/breweryLocation'
+    pageable:
+      $ref: 'Schemas.yaml#/components/schemas/pageable'
