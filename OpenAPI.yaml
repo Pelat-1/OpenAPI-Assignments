@@ -27,7 +27,13 @@ components:
       $ref: './Schemas.yaml#/components/schemas/beer'
     beerList:
       $ref: './Schemas.yaml#/components/schemas/beerList'
+    beerPagedList:
+      $ref: './Schemas.yaml#/components/schemas/beerPagedList'
     brewery:
       $ref: './Schemas.yaml#/components/schemas/brewery'
     breweryLocation:
       $ref: './Schemas.yaml#/components/schemas/breweryLocation'
+    page:
+      $ref: './Schemas.yaml#/components/schemas/page'
+    pageable:
+      $ref: './Schemas.yaml#/components/schemas/pageable'
