@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.0.2
 components:
   schemas:
     beer:
@@ -36,6 +36,15 @@ components:
       maxItems: 100
       items:
         $ref: '#/components/schemas/beer'
+    beerPagedList:
+      type: object
+      title: BeerPagedList
+      description: Beer Paged List
+      allOf:
+        - $ref: '#/components/schemas/pageable'
+      properties:
+        content:
+          $ref: '#/components/schemas/beerList'
     brewery:
       type: object
       title: Brewery
@@ -69,3 +78,47 @@ components:
           type: number
           format: double
       required: [ id, city ]
+    page:
+      type: object
+      title: Pageable
+      description: Pageable Abstract Class
+      properties:
+        offset:
+          type: integer
+          format: int32
+          minimum: 0
+          example: 25
+        pageNumber:
+          type: integer
+          format: int32
+          minimum: 1
+          example: 2
+        pageSize:
+          type: integer
+          # value = content.size()
+          format: int32
+          minimum: 1
+          example: 25
+      required: [ offset, pageNumber ]
+    pageable:
+      type: object
+      title: Page
+      description: Page Abstract Class
+      properties:
+        page:
+          $ref: '#/components/schemas/page'
+        sorted:
+          type: boolean
+          default: true
+          example: true
+        totalPages:
+          type: integer
+          format: int32
+          minimum: 1
+          example: 4
+        totalElements:
+          type: integer
+          format: int32
+          minimum: 0
+          example: 100
+      required: [ page, totalPages, totalElements ]
