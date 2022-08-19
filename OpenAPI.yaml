@@ -14,7 +14,8 @@ info:
 servers:
   $ref: 'Servers.yaml#/servers'
 paths:
-  $ref: 'APIs.yaml#/paths'
+  /v1/beers:
+    $ref: './APIs.yaml#/paths/beers'
 components:
   schemas:
     beer:
