@@ -30,6 +30,8 @@ components:
       required: [ id, style, price, quantity ]
     beerList:
       type: array
+      title: BeerList
+      description: Beer array
       minItems: 1
       maxItems: 100
       items:

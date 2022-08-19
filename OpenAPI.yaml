@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.0.3
 info:
   title: OpenAPI Course - Assignment
   description: OpenAPI Course assignment
@@ -24,12 +24,10 @@ paths:
 components:
   schemas:
     beer:
-      $ref: 'Schemas.yaml#/components/schemas/beer'
+      $ref: './Schemas.yaml#/components/schemas/beer'
     beerList:
-      $ref: 'Schemas.yaml#/components/schemas/beerList'
+      $ref: './Schemas.yaml#/components/schemas/beerList'
     brewery:
-      $ref: 'Schemas.yaml#/components/schemas/brewery'
+      $ref: './Schemas.yaml#/components/schemas/brewery'
     breweryLocation:
-      $ref: 'Schemas.yaml#/components/schemas/breweryLocation'
-    pageable:
-      $ref: 'Schemas.yaml#/components/schemas/pageable'
+      $ref: './Schemas.yaml#/components/schemas/breweryLocation'

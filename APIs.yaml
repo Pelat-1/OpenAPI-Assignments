@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.0.3
 paths:
   beers:
     get:
@@ -10,7 +10,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: './OpenAPI.yaml#/components/schemas/beerList'
+                $ref: './Schemas.yaml#/components/schemas/beerList'
         401:
           description: User is not allowed to retrieve Beer list
         404:
