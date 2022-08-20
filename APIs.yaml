@@ -36,3 +36,20 @@ paths:
           description: User is not allowed to retrieve Customer list
         404:
           description: Customer list empty
+  customersCustomerId:
+    get:
+      operationId: get-customer
+      description: Get Customer from customerId
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/customerId'
+      responses:
+        200:
+          description: Get Customer from customerId
+          content:
+            application/json:
+              schema:
+                $ref: './Components.yaml#/components/schemas/customer'
+        401:
+          description: User is not allowed to retrieve the Customer
+        404:
+          description: Customer not found
