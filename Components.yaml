@@ -1,6 +1,14 @@
 openapi: 3.0.2
 components:
-  parameters: 
+  parameters:
+    customerId:
+      name: customerId
+      in: path
+      description: Customer ID
+      required: true
+      schema:
+        type: string
+        format: uuid
     pageNumber:
       name: pageNumber
       in: query
