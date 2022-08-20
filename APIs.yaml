@@ -15,3 +15,18 @@ paths:
           description: User is not allowed to retrieve Beer list
         404:
           description: Beer list empty
+  customers:
+    get:
+      operationId: get-customers
+      description: Get Customer list
+      responses:
+        200:
+          description: Get Customer list
+          content:
+            application/json:
+              schema:
+                $ref: './Schemas.yaml#/components/schemas/customerPagedList'
+        401:
+          description: User is not allowed to retrieve Customer list
+        404:
+          description: Customer list empty
