@@ -26,24 +26,24 @@ paths:
 components:
   schemas:
     address:
-      $ref: './Schemas.yaml#/components/schemas/address'
+      $ref: './Components.yaml#/components/schemas/address'
     beer:
-      $ref: './Schemas.yaml#/components/schemas/beer'
+      $ref: './Components.yaml#/components/schemas/beer'
     beerList:
-      $ref: './Schemas.yaml#/components/schemas/beerList'
+      $ref: './Components.yaml#/components/schemas/beerList'
     beerPagedList:
-      $ref: './Schemas.yaml#/components/schemas/beerPagedList'
+      $ref: './Components.yaml#/components/schemas/beerPagedList'
     brewery:
-      $ref: './Schemas.yaml#/components/schemas/brewery'
+      $ref: './Components.yaml#/components/schemas/brewery'
     breweryLocation:
-      $ref: './Schemas.yaml#/components/schemas/breweryLocation'
+      $ref: './Components.yaml#/components/schemas/breweryLocation'
     customer:
-      $ref: './Schemas.yaml#/components/schemas/customer'
+      $ref: './Components.yaml#/components/schemas/customer'
     customerList:
-      $ref: './Schemas.yaml#/components/schemas/customerList'
+      $ref: './Components.yaml#/components/schemas/customerList'
     customerPagedList:
-      $ref: './Schemas.yaml#/components/schemas/customerPagedList'
+      $ref: './Components.yaml#/components/schemas/customerPagedList'
     page:
-      $ref: './Schemas.yaml#/components/schemas/page'
+      $ref: './Components.yaml#/components/schemas/page'
     pageable:
-      $ref: './Schemas.yaml#/components/schemas/pageable'
+      $ref: './Components.yaml#/components/schemas/pageable'
