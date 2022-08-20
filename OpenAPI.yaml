@@ -23,6 +23,8 @@ paths:
     $ref: './APIs.yaml#/paths/beers'
   /v1/customers:
     $ref: './APIs.yaml#/paths/customers'
+  /v1/customers/{customerId}:
+    $ref: './APIs.yaml#/paths/customersCustomerId'
 components:
   schemas:
     address:
