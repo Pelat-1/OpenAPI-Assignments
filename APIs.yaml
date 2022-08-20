@@ -5,26 +5,8 @@ paths:
       operationId: get-beers
       description: Get Beer list
       parameters:
-        - name: pageNumber
-          in: query
-          description: Page Number
-          required: false
-          schema:
-            type: integer
-            format: int32
-            minimum: 1
-            default: 1
-            example: 2
-        - name: pageSize
-          in: query
-          description: Page Size
-          required: false
-          schema:
-            type: integer
-            format: int32
-            minimum: 1
-            default: 25
-            example: 25
+        - $ref: './Components.yaml#/components/parameters/pageNumber'
+        - $ref: './Components.yaml#/components/parameters/pageSize'
       responses:
         200:
           description: Get Beer list
@@ -41,26 +23,8 @@ paths:
       operationId: get-customers
       description: Get Customer list
       parameters:
-        - name: pageNumber
-          in: query
-          description: Page Number
-          required: false
-          schema:
-            type: integer
-            format: int32
-            minimum: 1
-            default: 1
-            example: 2
-        - name: pageSize
-          in: query
-          description: Page Size
-          required: false
-          schema:
-            type: integer
-            format: int32
-            minimum: 1
-            default: 25
-            example: 25
+        - $ref: './Components.yaml#/components/parameters/pageNumber'
+        - $ref: './Components.yaml#/components/parameters/pageSize'
       responses:
         200:
           description: Get Customer list
