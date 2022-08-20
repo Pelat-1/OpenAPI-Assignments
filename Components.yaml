@@ -1,5 +1,28 @@
 openapi: 3.0.2
 components:
+  parameters: 
+    pageNumber:
+      name: pageNumber
+      in: query
+      description: Page Number
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 1
+        example: 2
+    pageSize:
+      name: pageSize
+      in: query
+      description: Page Size
+      required: false
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 25
+        example: 25
   schemas:
     address:
       type: object
