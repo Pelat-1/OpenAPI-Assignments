@@ -1,6 +1,29 @@
 openapi: 3.0.2
 components:
   schemas:
+    address:
+      type: object
+      title: Address
+      description: Address Class
+      properties:
+        country:
+          type: string
+          example: Italy
+        city:
+          type: string
+          example: Rome
+        street:
+          type: string
+          example: via Vittorio Emanuele
+        number:
+          type: string
+          example: 23/B
+        zipCode:
+          type: string
+          minLength: 5
+          maxLength: 5
+          example: 00100
+      required: [ country, city, street, number, zipCode ]
     beer:
       type: object
       title: Beer
@@ -78,9 +101,46 @@ components:
           type: number
           format: double
       required: [ id, city ]
+    customer:
+      type: object
+      title: Customer
+      description: Customer Class
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstname:
+          type: string
+          minLength: 2
+          example: James
+        lastname:
+          type: string
+          minLength: 2
+          example: Brown
+        address:
+          $ref: '#/components/schemas/address'
+      required: [ firstname, lastname, address ]
+    customerList:
+      type: array
+      title: CustomerList
+      description: Customer array
+      minItems: 1
+      maxItems: 100
+      items:
+        $ref: '#/components/schemas/customer'
+    customerPagedList:
+      type: object
+      title: CustomerPagedList
+      description: Customer Paged List
+      allOf:
+        - $ref: '#/components/schemas/pageable'
+      properties:
+        content:
+          $ref: '#/components/schemas/customerList'
+      required: [ content ]
     page:
       type: object
-      title: Pageable
+      title: Page
       description: Pageable Abstract Class
       properties:
         offset:
@@ -102,7 +162,7 @@ components:
       required: [ offset, pageNumber ]
     pageable:
       type: object
-      title: Page
+      title: Pageable
       description: Page Abstract Class
       properties:
         page:
