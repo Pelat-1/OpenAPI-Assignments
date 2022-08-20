@@ -21,8 +21,12 @@ servers:
 paths:
   /v1/beers:
     $ref: './APIs.yaml#/paths/beers'
+  /v1/customers:
+    $ref: './APIs.yaml#/paths/customers'
 components:
   schemas:
+    address:
+      $ref: './Schemas.yaml#/components/schemas/address'
     beer:
       $ref: './Schemas.yaml#/components/schemas/beer'
     beerList:
@@ -33,6 +37,12 @@ components:
       $ref: './Schemas.yaml#/components/schemas/brewery'
     breweryLocation:
       $ref: './Schemas.yaml#/components/schemas/breweryLocation'
+    customer:
+      $ref: './Schemas.yaml#/components/schemas/customer'
+    customerList:
+      $ref: './Schemas.yaml#/components/schemas/customerList'
+    customerPagedList:
+      $ref: './Schemas.yaml#/components/schemas/customerPagedList'
     page:
       $ref: './Schemas.yaml#/components/schemas/page'
     pageable:
