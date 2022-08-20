@@ -9,6 +9,7 @@ components:
       schema:
         type: string
         format: uuid
+        example: f59baba5-3ba1-47e8-b67e-3b58503e2913
     pageNumber:
       name: pageNumber
       in: query
@@ -63,6 +64,7 @@ components:
         id:
           type: string
           format: uuid
+          example: 63b7baba-90e9-4371-ad6f-11670f625a9e
         style:
           type: string
           minLength: 3
@@ -107,6 +109,7 @@ components:
         id:
           type: string
           format: uuid
+          example: 02990636-6466-4354-93af-38981f4e1df6
         name:
           type: string
           minLength: 3
@@ -122,6 +125,7 @@ components:
         id:
           type: string
           format: uuid
+          example: ef5403c5-55b7-425a-b3ea-c6f58adb3b1a
         city:
           type: string
           example: Berlin
@@ -140,6 +144,7 @@ components:
         id:
           type: string
           format: uuid
+          example: f59baba5-3ba1-47e8-b67e-3b58503e2913
         firstname:
           type: string
           minLength: 2
