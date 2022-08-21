@@ -18,6 +18,23 @@ paths:
           description: User is not allowed to retrieve Beer list
         404:
           description: Beer list empty
+  beersBeerId:
+    get:
+      operationId: get-beer
+      description: Get Beer from beerId
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/beerId'
+      responses:
+        200:
+          description: Get Beer from beerId
+          content:
+            application/json:
+              schema:
+                $ref: './Components.yaml#/components/schemas/beer'
+        401:
+          description: User is not allowed to retrieve the Beer
+        404:
+          description: Beer not found
   customers:
     get:
       operationId: get-customers
