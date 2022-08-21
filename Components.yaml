@@ -1,6 +1,15 @@
 openapi: 3.0.2
 components:
   parameters:
+    beerId:
+      name: beerId
+      in: path
+      description: Beer ID
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 63b7baba-90e9-4371-ad6f-11670f625a9e
     customerId:
       name: customerId
       in: path
