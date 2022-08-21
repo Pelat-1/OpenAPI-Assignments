@@ -2,7 +2,7 @@ openapi: 3.0.2
 paths:
   beers:
     get:
-      operationId: get-beers
+      operationId: getBeerListV1
       summary: Get Beer list
       description: Get a page of **Beer**s in the system
       tags:
@@ -23,7 +23,7 @@ paths:
           description: Beer list empty
   beersBeerId:
     get:
-      operationId: get-beer
+      operationId: getBeerByIdV1
       summary: Get Beer by ID
       description: Retrieve a single **Beer** in the system
       tags:
@@ -43,7 +43,7 @@ paths:
           description: Beer not found
   customers:
     get:
-      operationId: get-customers
+      operationId: getCustomerListV1
       summary: Get Customer list
       description: Get a page of **Customer**s in the system
       tags:
@@ -64,7 +64,7 @@ paths:
           description: Customer list empty
   customersCustomerId:
     get:
-      operationId: get-customer
+      operationId: getCustomerByIdV1
       summary: Get Customer by ID
       description: Retrieve a single **Customer** in the system
       tags:
