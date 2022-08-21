@@ -5,6 +5,8 @@ paths:
       operationId: get-beers
       summary: Get Beer list
       description: Get a page of **Beer**s in the system
+      tags:
+        - beers
       parameters:
         - $ref: './Components.yaml#/components/parameters/pageNumber'
         - $ref: './Components.yaml#/components/parameters/pageSize'
@@ -24,6 +26,8 @@ paths:
       operationId: get-beer
       summary: Get Beer by ID
       description: Retrieve a single **Beer** in the system
+      tags:
+        - beers
       parameters:
         - $ref: './Components.yaml#/components/parameters/beerId'
       responses:
@@ -42,6 +46,8 @@ paths:
       operationId: get-customers
       summary: Get Customer list
       description: Get a page of **Customer**s in the system
+      tags:
+        - customers
       parameters:
         - $ref: './Components.yaml#/components/parameters/pageNumber'
         - $ref: './Components.yaml#/components/parameters/pageSize'
@@ -61,6 +67,8 @@ paths:
       operationId: get-customer
       summary: Get Customer by ID
       description: Retrieve a single **Customer** in the system
+      tags:
+        - customers
       parameters:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:

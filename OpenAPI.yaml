@@ -51,3 +51,8 @@ components:
       $ref: './Components.yaml#/components/schemas/page'
     pageable:
       $ref: './Components.yaml#/components/schemas/pageable'
+tags:
+  - name: beers
+    description: Beer tag
+  - name: customers
+    description: Customer tag
