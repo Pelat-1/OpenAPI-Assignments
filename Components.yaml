@@ -1,5 +1,12 @@
 openapi: 3.0.2
 components:
+  headers: 
+    customerLocation:
+      description: Location of the created customer
+      schema:
+        type: string
+        format: uri
+        example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
   requestBodies:
     newCustomer:
       required: true

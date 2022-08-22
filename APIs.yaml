@@ -75,11 +75,7 @@ paths:
           description: Customer created
           headers:
             location:
-              description: Location of the created customer
-              schema:
-                type: string
-                format: uri
-                example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
+              $ref: './Components.yaml#/components/headers/customerLocation'
         401:
           description: User is not allowed to create a new Customer
   customersCustomerId:
