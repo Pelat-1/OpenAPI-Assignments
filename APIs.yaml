@@ -62,6 +62,23 @@ paths:
           description: User is not allowed to retrieve Customer list
         404:
           description: Customer list empty
+    post:
+      operationId: newCustomerV1
+      summary: New Customer
+      description: Create a new **Customer**
+      tags:
+        - customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer'
+      responses:
+        201:
+          description: Customer created
+        401:
+          description: User is not allowed to create a new Customer
   customersCustomerId:
     get:
       operationId: getCustomerByIdV1
