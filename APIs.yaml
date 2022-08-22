@@ -21,6 +21,22 @@ paths:
           description: User is not allowed to retrieve Beer list
         404:
           description: Beer list empty
+    post:
+      operationId: newBeerV1
+      summary: New Beer
+      description: Create a new **Beer**
+      tags:
+        - beers
+      requestBody:
+        $ref: "./Components.yaml#/components/requestBodies/newBeer"
+      responses:
+        201:
+          description: Beer created
+          headers:
+            location:
+              $ref: './Components.yaml#/components/headers/beerLocation'
+        401:
+          description: User is not allowed to create a new Customer
   beersBeerId:
     get:
       operationId: getBeerByIdV1
