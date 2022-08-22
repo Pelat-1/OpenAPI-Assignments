@@ -69,11 +69,7 @@ paths:
       tags:
         - customers
       requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/customer'
+        $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
         201:
           description: Customer created

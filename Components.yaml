@@ -1,5 +1,12 @@
 openapi: 3.0.2
 components:
+  requestBodies:
+    newCustomer:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer'
   parameters:
     beerId:
       name: beerId
@@ -63,7 +70,7 @@ components:
           type: string
           minLength: 5
           maxLength: 5
-          example: 00100
+          example: '00100'
       required: [ country, city, street, number, zipCode ]
     beer:
       type: object
