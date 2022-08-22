@@ -87,6 +87,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
           example: 63b7baba-90e9-4371-ad6f-11670f625a9e
         style:
           type: string
@@ -132,6 +133,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
           example: 02990636-6466-4354-93af-38981f4e1df6
         name:
           type: string
@@ -148,6 +150,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
           example: ef5403c5-55b7-425a-b3ea-c6f58adb3b1a
         city:
           type: string
@@ -167,6 +170,7 @@ components:
         id:
           type: string
           format: uuid
+          readOnly: true
           example: f59baba5-3ba1-47e8-b67e-3b58503e2913
         firstname:
           type: string
