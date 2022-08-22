@@ -1,6 +1,12 @@
 openapi: 3.0.2
 components:
-  headers: 
+  headers:
+    beerLocation:
+      description: Location of the created beer
+      schema:
+        type: string
+        format: uri
+        example: https://dev.example.com/v1/beers/63b7baba-90e9-4371-ad6f-11670f625a9e
     customerLocation:
       description: Location of the created customer
       schema:
@@ -8,6 +14,12 @@ components:
         format: uri
         example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
   requestBodies:
+    newBeer:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beer'
     newCustomer:
       required: true
       content:
