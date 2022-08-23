@@ -114,3 +114,20 @@ paths:
           description: User is not allowed to retrieve the Customer
         404:
           description: Customer not found
+    put:
+      operationId: updateCustomerV1
+      summary: Update Customer
+      description: Update **Customer** by ID
+      tags:
+        - customers
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/customerId'
+      requestBody:
+        $ref: "./Components.yaml#/components/requestBodies/newCustomer"
+      responses:
+        204:
+          description: Customer updated
+        401:
+          description: User is not allowed to update the Customer
+        404:
+          description: Customer not found
