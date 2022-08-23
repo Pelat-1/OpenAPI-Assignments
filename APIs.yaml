@@ -57,6 +57,23 @@ paths:
           description: User is not allowed to retrieve the Beer
         404:
           description: Beer not found
+    put:
+      operationId: updateBeerV1
+      summary: Update Beer
+      description: Update **Beer** by ID
+      tags:
+        - beers
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/beerId'
+      requestBody:
+        $ref: "./Components.yaml#/components/requestBodies/newBeer"
+      responses:
+        204:
+          description: Beer updated
+        401:
+          description: User is not allowed to update the Beer
+        404:
+          description: Beer not found
   customers:
     get:
       operationId: getCustomerListV1
