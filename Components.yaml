@@ -67,6 +67,67 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/customer'
+  responses:
+    beerNotFound404:
+      description: Beer not found
+    customerNotFound404:
+      description: Beer not found
+    createBeer201:
+      description: Beer created
+      headers:
+        location:
+          $ref: './Components.yaml#/components/headers/beerLocation'
+    createCustomer201:
+      description: Customer created
+      headers:
+        location:
+          $ref: './Components.yaml#/components/headers/customerLocation'
+    deleteBeer200:
+      description: Delete Beer from beerId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beer'
+    deleteCustomer200:
+      description: Delete Customer from customerId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer'
+    emptyList404:
+      description: List empty
+    getBeer200:
+      description: Get Beer from beerId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beer'
+    getBeerList200:
+      description: Get Beer list
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beerPagedList'
+    getCustomer200:
+      description: Get Customer from customerId
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer'
+    getCustomerList200:
+      description: Get Customer list
+      content:
+        application/json:
+          schema:
+            $ref: './Components.yaml#/components/schemas/customerPagedList'
+    idMissingWrongFormat400:
+      description: ID missing or wrong format
+    updateBeer204:
+      description: Beer updated
+    updateCustomer204:
+      description: Beer updated
+    userNotAllowed401:
+      description: User is not allowed
   schemas:
     address:
       type: object
