@@ -110,6 +110,8 @@ paths:
           $ref: './Components.yaml#/components/responses/createCustomer201'
         401:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
+        409:
+          $ref: './Components.yaml#/components/responses/customerConflict409'
   customersCustomerId:
     get:
       operationId: getCustomerByIdV1
@@ -143,6 +145,8 @@ paths:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
           $ref: './Components.yaml#/components/responses/customerNotFound404'
+        409:
+          $ref: './Components.yaml#/components/responses/customerConflict409'
     delete:
       operationId: deleteCustomerV1
       summary: Delete Customer by ID
