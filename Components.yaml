@@ -76,12 +76,12 @@ components:
       description: Beer created
       headers:
         location:
-          $ref: './Components.yaml#/components/headers/beerLocation'
+          $ref: '#/components/headers/beerLocation'
     createCustomer201:
       description: Customer created
       headers:
         location:
-          $ref: './Components.yaml#/components/headers/customerLocation'
+          $ref: '#/components/headers/customerLocation'
     customerConflict409:
       description: Customer already exists
     customerNotFound404:
@@ -123,7 +123,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: './Components.yaml#/components/schemas/customerPagedList'
+            $ref: '#/components/schemas/customerPagedList'
     idMissingWrongFormat400:
       description: ID missing or wrong format
     updateBeer204:
