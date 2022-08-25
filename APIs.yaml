@@ -59,7 +59,7 @@ paths:
           description: Beer not found
     put:
       operationId: updateBeerV1
-      summary: Update Beer
+      summary: Update Beer by ID
       description: Update **Beer** by ID
       tags:
         - beers
@@ -133,7 +133,7 @@ paths:
           description: Customer not found
     put:
       operationId: updateCustomerV1
-      summary: Update Customer
+      summary: Update Customer by ID
       description: Update **Customer** by ID
       tags:
         - customers
@@ -146,5 +146,26 @@ paths:
           description: Customer updated
         401:
           description: User is not allowed to update the Customer
+        404:
+          description: Customer not found
+    delete:
+      operationId: deleteCustomerV1
+      summary: Delete Customer by ID
+      description: Delete **Customer** by ID
+      tags:
+        - customers
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/customerId'
+      responses:
+        200:
+          description: Customer deleted
+          content:
+            application/json:
+              schema:
+                $ref: './Components.yaml#/components/schemas/customer'
+        400:
+          description: ID missing or wrong format
+        401:
+          description: User is not allowed to delete the Customer
         404:
           description: Customer not found
