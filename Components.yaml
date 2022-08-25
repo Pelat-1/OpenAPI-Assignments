@@ -13,19 +13,6 @@ components:
         type: string
         format: uri
         example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
-  requestBodies:
-    newBeer:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/beer'
-    newCustomer:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/customer'
   parameters:
     beerId:
       name: beerId
@@ -67,6 +54,19 @@ components:
         minimum: 1
         default: 25
         example: 25
+  requestBodies:
+    newBeer:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beer'
+    newCustomer:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/customer'
   schemas:
     address:
       type: object
