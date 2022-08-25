@@ -68,9 +68,9 @@ components:
           schema:
             $ref: '#/components/schemas/customer'
   responses:
+    beerConflict409:
+      description: Beer already exists
     beerNotFound404:
-      description: Beer not found
-    customerNotFound404:
       description: Beer not found
     createBeer201:
       description: Beer created
@@ -82,6 +82,10 @@ components:
       headers:
         location:
           $ref: './Components.yaml#/components/headers/customerLocation'
+    customerConflict409:
+      description: Customer already exists
+    customerNotFound404:
+      description: Beer not found
     deleteBeer200:
       description: Delete Beer from beerId
       content:
