@@ -12,15 +12,11 @@ paths:
         - $ref: './Components.yaml#/components/parameters/pageSize'
       responses:
         200:
-          description: Get Beer list
-          content:
-            application/json:
-              schema:
-                $ref: './Components.yaml#/components/schemas/beerPagedList'
+          $ref: './Components.yaml#/components/responses/getBeerList200'
         401:
-          description: User is not allowed to retrieve Beer list
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Beer list empty
+          $ref: './Components.yaml#/components/responses/emptyList404'
     post:
       operationId: newBeerV1
       summary: New Beer
@@ -31,12 +27,9 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newBeer"
       responses:
         201:
-          description: Beer created
-          headers:
-            location:
-              $ref: './Components.yaml#/components/headers/beerLocation'
+          $ref: './Components.yaml#/components/responses/createBeer201'
         401:
-          description: User is not allowed to create a new Customer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
   beersBeerId:
     get:
       operationId: getBeerByIdV1
@@ -48,15 +41,11 @@ paths:
         - $ref: './Components.yaml#/components/parameters/beerId'
       responses:
         200:
-          description: Get Beer from beerId
-          content:
-            application/json:
-              schema:
-                $ref: './Components.yaml#/components/schemas/beer'
+          $ref: './Components.yaml#/components/responses/getBeer200'
         401:
-          description: User is not allowed to retrieve the Beer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Beer not found
+          $ref: './Components.yaml#/components/responses/beerNotFound404'
     put:
       operationId: updateBeerV1
       summary: Update Beer by ID
@@ -69,11 +58,11 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newBeer"
       responses:
         204:
-          description: Beer updated
+          $ref: './Components.yaml#/components/responses/updateBeer204'
         401:
-          description: User is not allowed to update the Beer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Beer not found
+          $ref: './Components.yaml#/components/responses/beerNotFound404'
   customers:
     get:
       operationId: getCustomerListV1
@@ -86,15 +75,11 @@ paths:
         - $ref: './Components.yaml#/components/parameters/pageSize'
       responses:
         200:
-          description: Get Customer list
-          content:
-            application/json:
-              schema:
-                $ref: './Components.yaml#/components/schemas/customerPagedList'
+          $ref: './Components.yaml#/components/responses/getCustomerList200'
         401:
-          description: User is not allowed to retrieve Customer list
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Customer list empty
+          $ref: './Components.yaml#/components/responses/emptyList404'
     post:
       operationId: newCustomerV1
       summary: New Customer
@@ -105,12 +90,9 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
         201:
-          description: Customer created
-          headers:
-            location:
-              $ref: './Components.yaml#/components/headers/customerLocation'
+          $ref: './Components.yaml#/components/responses/createCustomer201'
         401:
-          description: User is not allowed to create a new Customer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
   customersCustomerId:
     get:
       operationId: getCustomerByIdV1
@@ -122,15 +104,11 @@ paths:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:
         200:
-          description: Get Customer from customerId
-          content:
-            application/json:
-              schema:
-                $ref: './Components.yaml#/components/schemas/customer'
+          $ref: './Components.yaml#/components/responses/getCustomer200'
         401:
-          description: User is not allowed to retrieve the Customer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Customer not found
+          $ref: './Components.yaml#/components/responses/customerNotFound404'
     put:
       operationId: updateCustomerV1
       summary: Update Customer by ID
@@ -143,11 +121,11 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
         204:
-          description: Customer updated
+          $ref: './Components.yaml#/components/responses/updateCustomer204'
         401:
-          description: User is not allowed to update the Customer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Customer not found
+          $ref: './Components.yaml#/components/responses/customerNotFound404'
     delete:
       operationId: deleteCustomerV1
       summary: Delete Customer by ID
@@ -158,14 +136,10 @@ paths:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:
         200:
-          description: Customer deleted
-          content:
-            application/json:
-              schema:
-                $ref: './Components.yaml#/components/schemas/customer'
+          $ref: './Components.yaml#/components/responses/deleteCustomer200'
         400:
-          description: ID missing or wrong format
+          $ref: './Components.yaml#/components/responses/idMissingWrongFormat400'
         401:
-          description: User is not allowed to delete the Customer
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          description: Customer not found
+          $ref: './Components.yaml#/components/responses/customerNotFound404'
