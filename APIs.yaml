@@ -63,6 +63,23 @@ paths:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
           $ref: './Components.yaml#/components/responses/beerNotFound404'
+    delete:
+      operationId: deleteBeerV1
+      summary: Delete Beer by ID
+      description: Delete **Beer** by ID
+      tags:
+        - beers
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/beerId'
+      responses:
+        200:
+          $ref: './Components.yaml#/components/responses/deleteBeer200'
+        400:
+          $ref: './Components.yaml#/components/responses/idMissingWrongFormat400'
+        401:
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
+        404:
+          $ref: './Components.yaml#/components/responses/beerNotFound404'
   customers:
     get:
       operationId: getCustomerListV1
