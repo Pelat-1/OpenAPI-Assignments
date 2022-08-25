@@ -30,6 +30,8 @@ paths:
           $ref: './Components.yaml#/components/responses/createBeer201'
         401:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
+        409:
+          $ref: './Components.yaml#/components/responses/beerConflict409'
   beersBeerId:
     get:
       operationId: getBeerByIdV1
@@ -63,6 +65,8 @@ paths:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
           $ref: './Components.yaml#/components/responses/beerNotFound404'
+        409:
+          $ref: './Components.yaml#/components/responses/beerConflict409'
     delete:
       operationId: deleteBeerV1
       summary: Delete Beer by ID
