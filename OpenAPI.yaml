@@ -27,6 +27,8 @@ paths:
     $ref: './APIs.yaml#/paths/customers'
   /v1/customers/{customerId}:
     $ref: './APIs.yaml#/paths/customersCustomerId'
+  /v1/customers/{customerId}/orders:
+    $ref: './APIs.yaml#/paths/customersCustomerIdOrders'
 components:
   schemas:
     address:
@@ -35,6 +37,14 @@ components:
       $ref: './Components.yaml#/components/schemas/beer'
     beerList:
       $ref: './Components.yaml#/components/schemas/beerList'
+    beerOrder:
+      $ref: './Components.yaml#/components/schemas/beerOrder'
+    beerOrderCallback:
+      $ref: './Components.yaml#/components/schemas/beerOrderCallback'
+    beerOrderLine:
+      $ref: './Components.yaml#/components/schemas/beerOrderLine'
+    beerOrderLineArray:
+      $ref: './Components.yaml#/components/schemas/beerOrderLineArray'
     beerPagedList:
       $ref: './Components.yaml#/components/schemas/beerPagedList'
     brewery:
@@ -56,3 +66,5 @@ tags:
     description: Beer tag
   - name: customers
     description: Customer tag
+  - name: orders
+    description: Order tag
