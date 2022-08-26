@@ -47,7 +47,7 @@ paths:
         401:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound404'
+          $ref: './Components.yaml#/components/responses/beerNotFound'
     put:
       operationId: updateBeerV1
       summary: Update Beer by ID
@@ -64,7 +64,7 @@ paths:
         401:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound404'
+          $ref: './Components.yaml#/components/responses/beerNotFound'
         409:
           $ref: './Components.yaml#/components/responses/beerConflict409'
     delete:
@@ -83,7 +83,7 @@ paths:
         401:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound404'
+          $ref: './Components.yaml#/components/responses/beerNotFound'
   customers:
     get:
       operationId: getCustomerListV1
@@ -168,3 +168,35 @@ paths:
           $ref: './Components.yaml#/components/responses/userNotAllowed401'
         404:
           $ref: './Components.yaml#/components/responses/customerNotFound404'
+  customersCustomerIdOrders:
+    post:
+      operationId: customerOrderV1
+      summary: Customer order by ID
+      description: Customer **Order** by customerId
+      tags:
+        - orders
+      parameters:
+        - $ref: './Components.yaml#/components/parameters/customerId'
+      requestBody:
+        $ref: './Components.yaml#/components/requestBodies/addBeerInOrder'
+      responses:
+        201:
+          $ref: './Components.yaml#/components/responses/orderCreated201'
+        204:
+          $ref: './Components.yaml#/components/responses/orderUpdated201'
+        400:
+          $ref: './Components.yaml#/components/responses/beerNotFound'
+        401:
+          $ref: './Components.yaml#/components/responses/userNotAllowed401'
+        404:
+          $ref: './Components.yaml#/components/responses/orderNotFound404'
+      callbacks:
+        orderStatusChange:
+          ${request.body#/orderStatusCallbackUrl}:
+            description: Webhook for order status change notifications
+            post:
+              requestBody:
+                $ref: './Components.yaml#/components/requestBodies/beerOrderUpdated'
+              respones:
+                204:
+                  $ref: './Components.yaml#/components/requestBodies/beerOrderCallback'
