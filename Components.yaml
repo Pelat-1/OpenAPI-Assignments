@@ -1,18 +1,5 @@
 openapi: 3.0.2
 components:
-  headers:
-    beerLocation:
-      description: Location of the created beer
-      schema:
-        type: string
-        format: uri
-        example: https://dev.example.com/v1/beers/63b7baba-90e9-4371-ad6f-11670f625a9e
-    customerLocation:
-      description: Location of the created customer
-      schema:
-        type: string
-        format: uri
-        example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
   parameters:
     beerId:
       name: beerId
@@ -54,7 +41,32 @@ components:
         minimum: 1
         default: 25
         example: 25
+  headers:
+    beerLocation:
+      description: Location of the created beer
+      schema:
+        type: string
+        format: uri
+        example: https://dev.example.com/v1/beers/63b7baba-90e9-4371-ad6f-11670f625a9e
+    customerLocation:
+      description: Location of the created customer
+      schema:
+        type: string
+        format: uri
+        example: https://dev.example.com/v1/customers/f59baba5-3ba1-47e8-b67e-3b58503e2913
   requestBodies:
+    addBeerInOrder:
+      required: false
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beerOrderLine'
+    beerOrderUpdated:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beerOrderCallback'
     newBeer:
       required: true
       content:
@@ -70,8 +82,10 @@ components:
   responses:
     beerConflict409:
       description: Beer already exists
-    beerNotFound404:
+    beerNotFound:
       description: Beer not found
+    beerOrderCallback:
+      description: Ok
     createBeer201:
       description: Beer created
       headers:
@@ -126,6 +140,16 @@ components:
             $ref: '#/components/schemas/customerPagedList'
     idMissingWrongFormat400:
       description: ID missing or wrong format
+    orderCreated201:
+      description: Order created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beerOrder'
+    orderNotFound404:
+      description: Order not found
+    orderUpdated201:
+      description: Order updated
     updateBeer204:
       description: Beer updated
     updateCustomer204:
@@ -193,6 +217,65 @@ components:
       maxItems: 100
       items:
         $ref: '#/components/schemas/beer'
+    beerOrder:
+      type: object
+      title: BeerOrder
+      description: Beer order
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          nullable: true
+          example: a538926a-2494-11ed-861d-0242ac120002
+        customerId:
+          type: string
+          format: uuid
+          readOnly: true
+          example: f59baba5-3ba1-47e8-b67e-3b58503e2913
+        beerOrderLine:
+          $ref: '#/components/schemas/beerOrderLineArray'
+        orderStatusCallbackUrl:
+          type: string
+          format: uri
+      required: [ customerId ]
+    beerOrderCallback:
+      type: object
+      title: BeerOrder
+      description: Beer order
+      properties:
+        id:
+          type: string
+          format: uuid
+          nullable: true
+          example: a538926a-2494-11ed-861d-0242ac120002
+        customerId:
+          type: string
+          format: uuid
+          example: f59baba5-3ba1-47e8-b67e-3b58503e2913
+        beerOrderLine:
+          $ref: '#/components/schemas/beerOrderLineArray'
+        orderStatusCallbackUrl:
+          type: string
+          format: uri
+      required: [ customerId ]
+    beerOrderLine:
+      type: object
+      properties:
+        beerId:
+          type: string
+          format: uuid
+          example: 63b7baba-90e9-4371-ad6f-11670f625a9e
+        quantity:
+          maximum: 999
+          minimum: 1
+          type: integer
+          example: 3
+      required: [ beerId, quantity ]
+    beerOrderLineArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/beerOrderLine'
     beerPagedList:
       type: object
       title: BeerPagedList
