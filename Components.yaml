@@ -80,81 +80,81 @@ components:
           schema:
             $ref: '#/components/schemas/customer'
   responses:
-    beerConflict409:
+    beerConflict:
       description: Beer already exists
     beerNotFound:
       description: Beer not found
     beerOrderCallback:
       description: Ok
-    createBeer201:
+    createBeer:
       description: Beer created
       headers:
         location:
           $ref: '#/components/headers/beerLocation'
-    createCustomer201:
+    createCustomer:
       description: Customer created
       headers:
         location:
           $ref: '#/components/headers/customerLocation'
-    customerConflict409:
+    customerConflict:
       description: Customer already exists
-    customerNotFound404:
+    customerNotFound:
       description: Beer not found
-    deleteBeer200:
+    deleteBeer:
       description: Delete Beer from beerId
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beer'
-    deleteCustomer200:
+    deleteCustomer:
       description: Delete Customer from customerId
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/customer'
-    emptyList404:
+    emptyList:
       description: List empty
-    getBeer200:
+    getBeer:
       description: Get Beer from beerId
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beer'
-    getBeerList200:
+    getBeerList:
       description: Get Beer list
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beerPagedList'
-    getCustomer200:
+    getCustomer:
       description: Get Customer from customerId
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/customer'
-    getCustomerList200:
+    getCustomerList:
       description: Get Customer list
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/customerPagedList'
-    idMissingWrongFormat400:
+    idMissingWrongFormat:
       description: ID missing or wrong format
-    orderCreated201:
+    orderCreated:
       description: Order created
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beerOrder'
-    orderNotFound404:
+    orderNotFound:
       description: Order not found
-    orderUpdated201:
+    orderUpdated:
       description: Order updated
-    updateBeer204:
+    updateBeer:
       description: Beer updated
-    updateCustomer204:
+    updateCustomer:
       description: Beer updated
-    userNotAllowed401:
+    userNotAllowed:
       description: User is not allowed
   schemas:
     address:
