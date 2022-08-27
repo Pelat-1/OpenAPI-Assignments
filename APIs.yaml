@@ -14,9 +14,9 @@ paths:
         200:
           $ref: './Components.yaml#/components/responses/getBeerList'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/emptyList'
+          $ref: './Components.yaml#/components/responses/errorEmptyList'
     post:
       operationId: newBeerV1
       summary: New Beer
@@ -27,11 +27,11 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newBeer"
       responses:
         201:
-          $ref: './Components.yaml#/components/responses/createBeer'
+          $ref: './Components.yaml#/components/responses/createdBeer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         409:
-          $ref: './Components.yaml#/components/responses/beerConflict'
+          $ref: './Components.yaml#/components/responses/conflictBeer'
   beersBeerId:
     get:
       operationId: getBeerByIdV1
@@ -45,9 +45,9 @@ paths:
         200:
           $ref: './Components.yaml#/components/responses/getBeer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundBeer'
     put:
       operationId: updateBeerV1
       summary: Update Beer by ID
@@ -60,13 +60,13 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newBeer"
       responses:
         204:
-          $ref: './Components.yaml#/components/responses/updateBeer'
+          $ref: './Components.yaml#/components/responses/updatedBeer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundBeer'
         409:
-          $ref: './Components.yaml#/components/responses/beerConflict'
+          $ref: './Components.yaml#/components/responses/conflictBeer'
     delete:
       operationId: deleteBeerV1
       summary: Delete Beer by ID
@@ -77,13 +77,13 @@ paths:
         - $ref: './Components.yaml#/components/parameters/beerId'
       responses:
         200:
-          $ref: './Components.yaml#/components/responses/deleteBeer'
+          $ref: './Components.yaml#/components/responses/deletedBeer'
         400:
-          $ref: './Components.yaml#/components/responses/idMissingWrongFormat'
+          $ref: './Components.yaml#/components/responses/errorIdMissingWrongFormat'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/beerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundBeer'
   customers:
     get:
       operationId: getCustomerListV1
@@ -98,9 +98,9 @@ paths:
         200:
           $ref: './Components.yaml#/components/responses/getCustomerList'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/emptyList'
+          $ref: './Components.yaml#/components/responses/errorEmptyList'
     post:
       operationId: newCustomerV1
       summary: New Customer
@@ -111,11 +111,11 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
         201:
-          $ref: './Components.yaml#/components/responses/createCustomer'
+          $ref: './Components.yaml#/components/responses/createdCustomer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         409:
-          $ref: './Components.yaml#/components/responses/customerConflict'
+          $ref: './Components.yaml#/components/responses/conflictCustomer'
   customersCustomerId:
     get:
       operationId: getCustomerByIdV1
@@ -129,9 +129,9 @@ paths:
         200:
           $ref: './Components.yaml#/components/responses/getCustomer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/customerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundCustomer'
     put:
       operationId: updateCustomerV1
       summary: Update Customer by ID
@@ -144,13 +144,13 @@ paths:
         $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
         204:
-          $ref: './Components.yaml#/components/responses/updateCustomer'
+          $ref: './Components.yaml#/components/responses/updatedCustomer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/customerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundCustomer'
         409:
-          $ref: './Components.yaml#/components/responses/customerConflict'
+          $ref: './Components.yaml#/components/responses/conflictCustomer'
     delete:
       operationId: deleteCustomerV1
       summary: Delete Customer by ID
@@ -161,13 +161,13 @@ paths:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:
         200:
-          $ref: './Components.yaml#/components/responses/deleteCustomer'
+          $ref: './Components.yaml#/components/responses/deletedCustomer'
         400:
-          $ref: './Components.yaml#/components/responses/idMissingWrongFormat'
+          $ref: './Components.yaml#/components/responses/errorIdMissingWrongFormat'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/customerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundCustomer'
   customersCustomerIdOrders:
     post:
       operationId: customerOrderV1
@@ -181,15 +181,15 @@ paths:
         $ref: './Components.yaml#/components/requestBodies/addBeerInOrder'
       responses:
         201:
-          $ref: './Components.yaml#/components/responses/orderCreated'
+          $ref: './Components.yaml#/components/responses/createdOrder'
         204:
-          $ref: './Components.yaml#/components/responses/orderUpdated'
+          $ref: './Components.yaml#/components/responses/updatedOrder'
         400:
-          $ref: './Components.yaml#/components/responses/beerNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundBeer'
         401:
-          $ref: './Components.yaml#/components/responses/userNotAllowed'
+          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
-          $ref: './Components.yaml#/components/responses/orderNotFound'
+          $ref: './Components.yaml#/components/responses/unfoundOrder'
       callbacks:
         orderStatusChange:
           ${request.body#/orderStatusCallbackUrl}:
@@ -199,4 +199,4 @@ paths:
                 $ref: './Components.yaml#/components/requestBodies/beerOrderUpdated'
               respones:
                 204:
-                  $ref: './Components.yaml#/components/requestBodies/beerOrderCallback'
+                  $ref: './Components.yaml#/components/responses/callbackBeerOrder'

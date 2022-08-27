@@ -80,39 +80,39 @@ components:
           schema:
             $ref: '#/components/schemas/customer'
   responses:
-    beerConflict:
+    conflictBeer:
       description: Beer already exists
-    beerNotFound:
+    unfoundBeer:
       description: Beer not found
-    beerOrderCallback:
+    callbackBeerOrder:
       description: Ok
-    createBeer:
+    createdBeer:
       description: Beer created
       headers:
         location:
           $ref: '#/components/headers/beerLocation'
-    createCustomer:
+    createdCustomer:
       description: Customer created
       headers:
         location:
           $ref: '#/components/headers/customerLocation'
-    customerConflict:
+    conflictCustomer:
       description: Customer already exists
-    customerNotFound:
+    unfoundCustomer:
       description: Beer not found
-    deleteBeer:
-      description: Delete Beer from beerId
+    deletedBeer:
+      description: Deleted Beer
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beer'
-    deleteCustomer:
-      description: Delete Customer from customerId
+    deletedCustomer:
+      description: Deleted Customer from customerId
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/customer'
-    emptyList:
+    errorEmptyList:
       description: List empty
     getBeer:
       description: Get Beer from beerId
@@ -138,23 +138,23 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/customerPagedList'
-    idMissingWrongFormat:
+    errorIdMissingWrongFormat:
       description: ID missing or wrong format
-    orderCreated:
+    createdOrder:
       description: Order created
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/beerOrder'
-    orderNotFound:
+    unfoundOrder:
       description: Order not found
-    orderUpdated:
+    updatedOrder:
       description: Order updated
-    updateBeer:
+    updatedBeer:
       description: Beer updated
-    updateCustomer:
+    updatedCustomer:
       description: Beer updated
-    userNotAllowed:
+    errorUserUnallowed:
       description: User is not allowed
   schemas:
     address:
@@ -241,7 +241,7 @@ components:
       required: [ customerId ]
     beerOrderCallback:
       type: object
-      title: BeerOrder
+      title: BeerOrderCallback
       description: Beer order
       properties:
         id:
@@ -261,6 +261,8 @@ components:
       required: [ customerId ]
     beerOrderLine:
       type: object
+      title: BeerOrderLine
+      description: Line of an BeerOrder object
       properties:
         beerId:
           type: string
@@ -274,6 +276,8 @@ components:
       required: [ beerId, quantity ]
     beerOrderLineArray:
       type: array
+      title: BeerOrderLineList
+      description: BeerOrderLine array
       items:
         $ref: '#/components/schemas/beerOrderLine'
     beerPagedList:
