@@ -80,12 +80,12 @@ components:
           schema:
             $ref: '#/components/schemas/customer'
   responses:
-    conflictBeer:
-      description: Beer already exists
-    unfoundBeer:
-      description: Beer not found
     callbackBeerOrder:
       description: Ok
+    conflictBeer:
+      description: Beer already exists
+    conflictCustomer:
+      description: Customer already exists
     createdBeer:
       description: Beer created
       headers:
@@ -96,10 +96,12 @@ components:
       headers:
         location:
           $ref: '#/components/headers/customerLocation'
-    conflictCustomer:
-      description: Customer already exists
-    unfoundCustomer:
-      description: Beer not found
+    createdOrder:
+      description: Order created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/beerOrder'
     deletedBeer:
       description: Deleted Beer
       content:
@@ -114,6 +116,10 @@ components:
             $ref: '#/components/schemas/customer'
     errorEmptyList:
       description: List empty
+    errorIdMissingWrongFormat:
+      description: ID missing or wrong format
+    errorUserUnallowed:
+      description: User is not allowed
     getBeer:
       description: Get Beer from beerId
       content:
@@ -138,24 +144,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/customerPagedList'
-    errorIdMissingWrongFormat:
-      description: ID missing or wrong format
-    createdOrder:
-      description: Order created
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/beerOrder'
+    unfoundBeer:
+      description: Beer not found
+    unfoundCustomer:
+      description: Beer not found
     unfoundOrder:
       description: Order not found
-    updatedOrder:
-      description: Order updated
     updatedBeer:
       description: Beer updated
     updatedCustomer:
       description: Beer updated
-    errorUserUnallowed:
-      description: User is not allowed
+    updatedOrder:
+      description: Order updated
   schemas:
     address:
       type: object
