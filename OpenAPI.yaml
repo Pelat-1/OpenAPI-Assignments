@@ -61,6 +61,11 @@ components:
       $ref: './Components.yaml#/components/schemas/page'
     pageable:
       $ref: './Components.yaml#/components/schemas/pageable'
+  securitySchemes:
+    BasicAuth:
+      $ref: './Components.yaml#/components/securitySchemes/BasicAuth'
+security:
+  - BasicAuth: []
 tags:
   - name: beers
     description: Beer tag

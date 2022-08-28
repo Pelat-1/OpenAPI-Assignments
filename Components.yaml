@@ -409,3 +409,9 @@ components:
           minimum: 0
           example: 100
       required: [ page, totalPages, totalElements ]
+  securitySchemes:
+    BasicAuth:
+      name: BasicAuth
+      description: Basic Authentication
+      type: http
+      scheme: basic
