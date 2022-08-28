@@ -13,10 +13,9 @@ paths:
       responses:
         200:
           $ref: './Components.yaml#/components/responses/getBeerList'
-        401:
-          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
           $ref: './Components.yaml#/components/responses/errorEmptyList'
+      security: []
     post:
       operationId: newBeerV1
       summary: New Beer
@@ -44,10 +43,9 @@ paths:
       responses:
         200:
           $ref: './Components.yaml#/components/responses/getBeer'
-        401:
-          $ref: './Components.yaml#/components/responses/errorUserUnallowed'
         404:
           $ref: './Components.yaml#/components/responses/unfoundBeer'
+      security: []
     put:
       operationId: updateBeerV1
       summary: Update Beer by ID
