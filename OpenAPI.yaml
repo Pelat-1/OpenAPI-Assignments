@@ -64,8 +64,11 @@ components:
   securitySchemes:
     BasicAuth:
       $ref: './Components.yaml#/components/securitySchemes/BasicAuth'
+    JwtAuthToken:
+      $ref: './Components.yaml#/components/securitySchemes/JwtAuthToken'
 security:
   - BasicAuth: []
+  - JwtAuthToken: []
 tags:
   - name: beers
     description: Beer tag

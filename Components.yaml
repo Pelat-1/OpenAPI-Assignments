@@ -415,3 +415,8 @@ components:
       description: Basic Authentication
       type: http
       scheme: basic
+    JwtAuthToken:
+      name: JWTAuthToken
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
