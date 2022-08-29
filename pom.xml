@@ -156,7 +156,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>${project.basedir}/OpenAPI.yaml</inputSpec>
+                            <inputSpec>${project.basedir}/src/main/resources/static/OpenAPI.yaml</inputSpec>
                             <generatorName>spring</generatorName>
                             <apiPackage>it.pelat1.openapi-course.api</apiPackage>
                             <modelPackage>it.pelat1.openapi-course.model</modelPackage>
