@@ -70,9 +70,9 @@ security:
   - BasicAuth: []
   - JwtAuthToken: []
 tags:
-  - name: beers
+  - name: Beer
     description: Beer tag
-  - name: customers
+  - name: Customer
     description: Customer tag
-  - name: orders
+  - name: Order
     description: Order tag

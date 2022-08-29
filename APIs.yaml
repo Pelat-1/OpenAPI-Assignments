@@ -6,7 +6,7 @@ paths:
       summary: Get Beer list
       description: Get a page of **Beer**s in the system
       tags:
-        - beers
+        - Beer
       parameters:
         - $ref: './Components.yaml#/components/parameters/pageNumber'
         - $ref: './Components.yaml#/components/parameters/pageSize'
@@ -21,7 +21,7 @@ paths:
       summary: New Beer
       description: Create a new **Beer**
       tags:
-        - beers
+        - Beer
       requestBody:
         $ref: "./Components.yaml#/components/requestBodies/newBeer"
       responses:
@@ -37,7 +37,7 @@ paths:
       summary: Get Beer by ID
       description: Retrieve a single **Beer** in the system
       tags:
-        - beers
+        - Beer
       parameters:
         - $ref: './Components.yaml#/components/parameters/beerId'
       responses:
@@ -51,7 +51,7 @@ paths:
       summary: Update Beer by ID
       description: Update **Beer** by ID
       tags:
-        - beers
+        - Beer
       parameters:
         - $ref: './Components.yaml#/components/parameters/beerId'
       requestBody:
@@ -70,7 +70,7 @@ paths:
       summary: Delete Beer by ID
       description: Delete **Beer** by ID
       tags:
-        - beers
+        - Beer
       parameters:
         - $ref: './Components.yaml#/components/parameters/beerId'
       responses:
@@ -88,7 +88,7 @@ paths:
       summary: Get Customer list
       description: Get a page of **Customer**s in the system
       tags:
-        - customers
+        - Customer
       parameters:
         - $ref: './Components.yaml#/components/parameters/pageNumber'
         - $ref: './Components.yaml#/components/parameters/pageSize'
@@ -104,7 +104,7 @@ paths:
       summary: New Customer
       description: Create a new **Customer**
       tags:
-        - customers
+        - Customer
       requestBody:
         $ref: "./Components.yaml#/components/requestBodies/newCustomer"
       responses:
@@ -120,7 +120,7 @@ paths:
       summary: Get Customer by ID
       description: Retrieve a single **Customer** in the system
       tags:
-        - customers
+        - Customer
       parameters:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:
@@ -135,7 +135,7 @@ paths:
       summary: Update Customer by ID
       description: Update **Customer** by ID
       tags:
-        - customers
+        - Customer
       parameters:
         - $ref: './Components.yaml#/components/parameters/customerId'
       requestBody:
@@ -154,7 +154,7 @@ paths:
       summary: Delete Customer by ID
       description: Delete **Customer** by ID
       tags:
-        - customers
+        - Customer
       parameters:
         - $ref: './Components.yaml#/components/parameters/customerId'
       responses:
@@ -172,7 +172,7 @@ paths:
       summary: Customer order by ID
       description: Customer **Order** by customerId
       tags:
-        - orders
+        - Order
       parameters:
         - $ref: './Components.yaml#/components/parameters/customerId'
       requestBody:
